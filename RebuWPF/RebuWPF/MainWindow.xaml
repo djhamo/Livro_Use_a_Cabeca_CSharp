@@ -1,0 +1,155 @@
+﻿<Window x:Class="RebuWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:properties="clr-namespace:RebuWPF.Properties"
+        Title="Controle dos Rebus" Height="460" Width="800"
+        MinHeight="460"
+        MinWidth="604">
+    <Grid Margin="0,0,-99,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260*"/>
+            <ColumnDefinition Width="259*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="10,10,105,10" Grid.ColumnSpan="2">
+            <TabItem Header="Rebu">
+                <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.392,0.067">
+                    <Button x:Name="Save" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Click="Save_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/filesave.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="bt_new" Margin="0,41,10,0" VerticalAlignment="Top" Click="bt_new_Click" RenderTransformOrigin="0.583,-0.043" HorizontalAlignment="Right" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/plus.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+
+                    <DataGrid x:Name="grRebus" AutoGenerateColumns="False" Margin="10,10,41,0" Loaded="grRebus_Loaded" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="grRebus_SelectionChanged" Height="218" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" SelectionMode="Single" CanUserAddRows="false">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="grRebuId" Width="50" Header="ID " Binding="{Binding RebuId}">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="ID " />
+                                            <TextBox x:Name="schID" Width="25"  TextChanged="find_TextChanged"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="Data" Width="75" Header="Data" Binding="{Binding Data}"/>
+
+                            <DataGridComboBoxColumn x:Name="mEmpresat"  Width="150" Header="Empresa" SelectedValueBinding="{Binding mEmpresa, Mode=TwoWay}" >
+                                <DataGridComboBoxColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Empresa " />
+                                            <TextBox x:Name="schEmp" Width="90"  TextChanged="find_TextChanged" />
+                                        </StackPanel>
+                                </DataTemplate>
+                            </DataGridComboBoxColumn.HeaderTemplate>
+                         </DataGridComboBoxColumn>
+
+                            <DataGridTextColumn x:Name="Ocorrencia" Width="*" Header="Ocorrência Inicial" Binding="{Binding OcorrenciaInicial}" >
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Ocorrência " />
+                                            <TextBox x:Name="schOcoor" Width="130" TextChanged="find_TextChanged"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="bt_delete" Margin="0,72,10,0" VerticalAlignment="Top" Click="bt_delete_Click" RenderTransformOrigin="8.339,3.015" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/minus.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="bt_del_step" HorizontalAlignment="Right" Margin="0,264,10.4,0" VerticalAlignment="Top" Click="bt_del_step_Click" RenderTransformOrigin="0.84,2.854">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/minus.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="bt_new_step" HorizontalAlignment="Right" Margin="0,233,10.4,0" VerticalAlignment="Top" Click="bt_new_step_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/plus.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+                    <DataGrid x:Name="grRebusStep" AutoGenerateColumns="False" Margin="10,233,41.4,9.6" AlternatingRowBackground="LightBlue" AlternationCount="2" CanUserAddRows="false">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="RebuStepId" Width="SizeToHeader" Header="ID " Binding="{Binding RebuStepId}" >
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="ID " />
+                                            <TextBox x:Name="schIDDet" Width="25"  TextChanged="findDetail_TextChanged"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn x:Name="StepData" Width="75" Header="Data" Binding="{Binding Data}"/>
+                            <DataGridTextColumn x:Name="Atendente" Width="85" Header="Atendente" Binding="{Binding Atendente}"/>
+                            <DataGridTextColumn x:Name="StepProtocolo" Width="115" Header="Protocolo" Binding="{Binding Protocolo}" >
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Protocolo " />
+                                            <TextBox x:Name="schProtocolo" Width="50" TextChanged="findDetail_TextChanged"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn x:Name="StepOcorrencia" Width="*" Header="Ocorrência" Binding="{Binding Ocorrencia}" >
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Ocorrência " />
+                                            <TextBox x:Name="schOcoorDet" Width="130" TextChanged="findDetail_TextChanged"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Opções">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="563*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="grEmpresa" AutoGenerateColumns="False" Margin="10,10,41,10" AlternatingRowBackground="LightBlue" AlternationCount="2" CanUserAddRows="false" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="EmpresaId" Width="SizeToHeader" Header="ID" Binding="{Binding EmpresaId}"/>
+                            <DataGridTextColumn x:Name="NomeEmpresa" Width="*" Header="Nome" Binding="{Binding Nome}"/>
+                            <DataGridTextColumn x:Name="TelefoneEmpresa" Width="175" Header="Telefone" Binding="{Binding Telefone}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Grid.Column="1" Click="Save_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/filesave.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="New_Empresa" HorizontalAlignment="Right" Margin="0,41,10,0" VerticalAlignment="Top" Grid.Column="1" Click="New_Empresa_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/plus.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="del_empresa" HorizontalAlignment="Right" Margin="0,72,10,0" VerticalAlignment="Top" Grid.Column="1" Click="del_empresa_Click" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://siteoforigin:,,,/minus.png" Stretch="Uniform" Height="22" Width="22" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

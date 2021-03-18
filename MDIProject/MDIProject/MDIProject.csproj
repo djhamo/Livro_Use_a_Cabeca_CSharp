@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63BA77C4-C620-4B94-86D7-0690316E891D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MDIProject</RootNamespace>
+    <AssemblyName>MDIProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AWCurrencyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWCurrencyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AWCurrencyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWCurrencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AWCurrencyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWCurrencyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>AWCurrencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntityDataGrid.Designer.cs">
+      <DependentUpon>EntityDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LINQtoObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LINQtoObjects.Designer.cs">
+      <DependentUpon>LINQtoObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LINQtoSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LINQtoSQL.Designer.cs">
+      <DependentUpon>LINQtoSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyDataTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyDataTable.Designer.cs">
+      <DependentUpon>ModifyDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDataSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDataSet.Designer.cs">
+      <DependentUpon>MyDataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm.Designer.cs">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishCurrency.Designer.cs">
+      <DependentUpon>PublishCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EntityDataGrid.resx">
+      <DependentUpon>EntityDataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LINQtoObjects.resx">
+      <DependentUpon>LINQtoObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LINQtoSQL.resx">
+      <DependentUpon>LINQtoSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyDataTable.resx">
+      <DependentUpon>ModifyDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDataSet.resx">
+      <DependentUpon>MyDataSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm.resx">
+      <DependentUpon>ParentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PublishCurrency.resx">
+      <DependentUpon>PublishCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="AWCurrencyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AWCurrencyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AWCurrencyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AWCurrencyModel.edmx</DependentUpon>
+      <LastGenOutput>AWCurrencyModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AWCurrencyModel.edmx.diagram">
+      <DependentUpon>AWCurrencyModel.edmx</DependentUpon>
+    </None>
+    <None Include="AWCurrencyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AWCurrencyModel.edmx</DependentUpon>
+      <LastGenOutput>AWCurrencyModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

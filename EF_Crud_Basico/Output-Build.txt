@@ -1,0 +1,5 @@
+﻿1>------ Rebuild All started: Project: EF6Winforms, Configuration: Debug Any CPU ------
+1>C:\Users\tiago\Documents\EF6Winforms\EF6WinForms\EntityBindingList.cs(211,48,211,59): error CS0104: 'EntityState' is an ambiguous reference between 'System.Data.EntityState' and 'System.Data.Entity.EntityState'
+1>C:\Users\tiago\Documents\EF6Winforms\EF6WinForms\EntityBindingList.cs(211,29,211,67): error CS0019: Operator '==' cannot be applied to operands of type 'System.Data.Entity.EntityState' and 'System.Data.EntityState'
+1>C:\Users\tiago\Documents\EF6Winforms\EF6WinForms\EntityBindingList.cs(212,29,212,68): error CS0019: Operator '==' cannot be applied to operands of type 'System.Data.Entity.EntityState' and 'System.Data.EntityState'
+========== Rebuild All: 0 succeeded, 1 failed, 0 skipped ==========

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>20</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Inventory
+--
+--
+addGuitar(String, double, InstrumrntSpec)
+getGuitar(String): Guitar
+search(GuitarSpec): List &lt;Guitar&gt;
+search(MandolinSpec): List &lt;Mandolin&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>420</y>
+      <w>230</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>InstrumentSpec
+--
+properties: Map
+--
+getProperty(String): Object
+getProperties(): Map
+matches(InstrumentSpec): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>190</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Builder
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>250</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Type
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>310</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Wood
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>190</y>
+      <w>210</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Instrument
+--
+serialNumber: String
+price: double
+style: Style
+--
+getSerialNumber(): String
+getPrice(): double
+setPrice(float)
+getStyle(): Style
+getSpec(): InstrumentSpec
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>370</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Style
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>130</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=Inventory</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>350</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=spec
+m2= 1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>430</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>InstrumentType
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

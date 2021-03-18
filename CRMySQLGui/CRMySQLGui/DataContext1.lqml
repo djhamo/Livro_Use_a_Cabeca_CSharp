@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="crm" EntityNamespace="CrmContext" ContextNamespace="CrmContext" Class="CrmDataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="e3221a4f-df66-4893-9159-6f950548cc46" Provider="Devart.Data.MySql.Linq.Provider.MySqlDataProvider, Devart.Data.MySql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="User Id=root;Host=localhost;Database=crm;Persist Security Info=True" Provider="Devart.Data.MySql" />
+  <Table Name="crm.company" Member="Companies">
+    <Type Name="Company" ed:Guid="0307bfa9-a7d3-46ae-92cf-53edcd8a1ed4">
+      <Documentation>
+        <Summary>The table of customer and shipping companies</Summary>
+      </Documentation>
+      <Column Name="CompanyID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="True" ed:Guid="5d7eee64-64a2-48ae-b85c-68623fe23022" />
+      <Column Name="CompanyName" Type="System.String" DbType="VARCHAR(40) NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="40" ed:ValidateMaxLength="40" ed:ValidateRequired="True" ed:Guid="475f55c1-ace5-4911-b3f9-89b38eac285f" />
+      <Column Name="PrimaryContact" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="5afab5d4-64ec-40a4-9d6e-005bd9f0feec">
+        <Documentation>
+          <Summary>A reference to the employee who is the preferable company contact</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Web" Type="System.String" DbType="VARCHAR(100) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="100" ed:ValidateMaxLength="100" ed:ValidateRequired="False" ed:Guid="156026e7-3cb1-475f-b4c9-054ff6c57f7d" />
+      <Column Name="Email" Type="System.String" DbType="VARCHAR(50) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="e6a3a175-fffa-4eb9-9210-bd5a07736dba" />
+      <Column Name="AddressTitle" Type="System.String" DbType="VARCHAR(120) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="120" ed:ValidateMaxLength="120" ed:ValidateRequired="False" ed:Guid="93604574-4f75-4c45-9de1-0458176d45b3">
+        <Documentation>
+          <Summary>Specifies the address type, i.e., if it is legal, physical or other</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Address" Type="System.String" DbType="VARCHAR(60) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="60" ed:ValidateMaxLength="60" ed:ValidateRequired="False" ed:Guid="a2b926b1-d054-405e-9cf9-acdb61490688" />
+      <Column Name="City" Type="System.String" DbType="VARCHAR(30) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="False" ed:Guid="a6bc8499-4cd0-4aa4-8e5f-652bdb9af932" />
+      <Column Name="Region" Type="System.String" DbType="VARCHAR(20) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="5e7d6cc7-d042-4623-a70d-a8c43d90358d" />
+      <Column Name="PostalCode" Type="System.String" DbType="VARCHAR(15) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="False" ed:Guid="2750fdf9-fa63-4992-9c4e-df8fb67f0cb9" />
+      <Column Name="Country" Type="System.String" DbType="VARCHAR(20) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="c1d45437-3015-4f2c-9b36-2dba73f751a5" />
+      <Column Name="Phone" Type="System.String" DbType="VARCHAR(25) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="25" ed:ValidateMaxLength="25" ed:ValidateRequired="False" ed:Guid="dc95ba6e-ce9c-4ee2-ac16-dfcfbae5a52a" />
+      <Column Name="Fax" Type="System.String" DbType="VARCHAR(25) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="25" ed:ValidateMaxLength="25" ed:ValidateRequired="False" ed:Guid="8d35b408-4e7b-4b07-9958-ff726b3abd79" />
+      <Association Name="Personcontact_Company" ed:AssociationGuid="9850516f-b4df-490c-a929-d62cb5e733d7" Member="Personcontact_PrimaryContact" ed:Guid="b5532508-a3f2-4a95-a346-070a89c7f250" ThisKey="PrimaryContact" OtherKey="ContactID" Type="Personcontact" DeleteRule="RESTRICT" IsForeignKey="true" />
+      <Association Name="Company_Order" ed:AssociationGuid="1919f3c0-c861-41c0-99ce-8ec470b4c057" Member="Orders_CompanyID" ed:Guid="60c46aed-de00-4bb2-99f6-3b3d2399c846" ThisKey="CompanyID" OtherKey="CompanyID" Type="Order" />
+      <Association Name="Company_Order1" ed:AssociationGuid="bf87e647-be64-44de-a035-c9e8dfbe5fdc" Member="Orders_ShipCompanyID" ed:Guid="90720c03-5b76-47e5-8ca6-7cf034ed4090" ThisKey="CompanyID" OtherKey="ShipCompanyID" Type="Order" />
+      <Association Name="Company_Personcontact" ed:AssociationGuid="567c047d-5811-4ae9-9fb7-fe56f1c81012" Member="Personcontacts_CompanyID" ed:Guid="ed2c0ff6-a90a-4358-9048-b6d677877eaf" ThisKey="CompanyID" OtherKey="CompanyID" Type="Personcontact" />
+    </Type>
+  </Table>
+  <Table Name="crm.`order details`" Member="Orderdetails">
+    <Type Name="Orderdetail" ed:Guid="97af2721-e993-4e04-a5bf-f73cc72aac3e">
+      <Documentation>
+        <Summary>Table for the detailed information on what the order consists of</Summary>
+      </Documentation>
+      <Column Name="OrderID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="True" ed:Guid="9f4aa752-4dff-4be1-b5f7-7dca54ffab71" />
+      <Column Name="ProductID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" DefaultValue="0" Precision="11" ed:ValidateRequired="True" ed:Guid="7ee34d57-8f09-4a75-93e2-2f7ecc70cdf7">
+        <Documentation>
+          <Summary>A product present in the order</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Price" Type="System.Decimal" DbType="DECIMAL(10,2) NULL" CanBeNull="true" UpdateCheck="Never" Precision="10" Scale="2" ed:ValidateRequired="False" ed:Guid="26e1c9e7-5db7-43c6-9a4f-63cb7d7a36fb" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="DECIMAL(10,4) NULL" CanBeNull="true" UpdateCheck="Never" Precision="10" Scale="4" ed:ValidateRequired="False" ed:Guid="ddcbf417-cb46-4d4e-83eb-a2402193b260">
+        <Documentation>
+          <Summary>Quantity of the product specified</Summary>
+        </Documentation>
+      </Column>
+      <Association Name="Order_Orderdetail" ed:AssociationGuid="ff368e00-b27e-49d0-978b-6d24356ed48e" Member="Order" ed:Guid="3a522f98-7ea5-4e47-b46d-57b34aff040d" ThisKey="OrderID" OtherKey="OrderID" Type="Order" DeleteRule="RESTRICT" IsForeignKey="true" />
+      <Association Name="Product_Orderdetail" ed:AssociationGuid="4c2a5f01-1e65-46d8-961f-5b6d4ca62775" Member="Product" ed:Guid="b85789a2-acf8-43ac-b2b4-7c7d22749b50" ThisKey="ProductID" OtherKey="ProductID" Type="Product" DeleteRule="RESTRICT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="crm.orders" Member="Orders">
+    <Type Name="Order" ed:Guid="5f8be4ed-67a4-44c2-b5de-cfa6d97f45d9">
+      <Documentation>
+        <Summary>Table storing the general data about orders</Summary>
+      </Documentation>
+      <Column Name="OrderID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="True" ed:Guid="e1eb5b98-79b0-4eae-9fbb-e93a22401135" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="3ca7ec67-adef-4b84-b869-54cb22151f64">
+        <Documentation>
+          <Summary>The customer company</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="ContactID" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="670658ba-4298-41c5-9018-faa004125998">
+        <Documentation>
+          <Summary>The person to contact regarding the order</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DATETIME NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="False" ed:Guid="20cf67ba-cbb5-463d-a01e-b566f3f8f4e5">
+        <Documentation>
+          <Summary>The date when the order was made</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Freight" Type="System.Decimal" DbType="DECIMAL(10,2) NULL" CanBeNull="true" UpdateCheck="Never" Precision="10" Scale="2" ed:ValidateRequired="False" ed:Guid="449c4f9e-4082-4dea-a253-46655ef2423f">
+        <Documentation>
+          <Summary>Freight cost of the order</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="ShipDate" Type="System.DateTime" DbType="DATETIME NULL" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="False" ed:Guid="ce9fae81-055f-480e-88ab-935382643430">
+        <Documentation>
+          <Summary>The date of order to be shipped</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="ShipCompanyID" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="8a591653-b8b2-4b40-ac76-68fe9a0db018">
+        <Documentation>
+          <Summary>The shipping contractor</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Discount" Type="System.Decimal" DbType="DECIMAL(10,2) NULL" CanBeNull="true" UpdateCheck="Never" Precision="10" Scale="2" ed:ValidateRequired="False" ed:Guid="2cd02910-9079-4738-8127-248c1f331432">
+        <Documentation>
+          <Summary>Discount available for the order</Summary>
+        </Documentation>
+      </Column>
+      <Association Name="Order_Orderdetail" ed:AssociationGuid="ff368e00-b27e-49d0-978b-6d24356ed48e" Member="Orderdetails" ed:Guid="d6b8658b-e8e8-432e-94ee-c9a91c4672bf" ThisKey="OrderID" OtherKey="OrderID" Type="Orderdetail" />
+      <Association Name="Company_Order" ed:AssociationGuid="1919f3c0-c861-41c0-99ce-8ec470b4c057" Member="Company_CompanyID" ed:Guid="0535f262-d444-4544-a43e-d6f594d9fea4" ThisKey="CompanyID" OtherKey="CompanyID" Type="Company" DeleteRule="RESTRICT" IsForeignKey="true" />
+      <Association Name="Personcontact_Order" ed:AssociationGuid="d908230c-7966-432c-8aaf-f2db059fb73a" Member="Personcontact" ed:Guid="8bf0dc3e-3be6-4d2a-bbdb-c83329c2baaf" ThisKey="ContactID" OtherKey="ContactID" Type="Personcontact" DeleteRule="RESTRICT" IsForeignKey="true" />
+      <Association Name="Company_Order1" ed:AssociationGuid="bf87e647-be64-44de-a035-c9e8dfbe5fdc" Member="Company_ShipCompanyID" ed:Guid="82be6498-ca2b-4ed6-8d56-77b758a2ac5f" ThisKey="ShipCompanyID" OtherKey="CompanyID" Type="Company" DeleteRule="RESTRICT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="crm.`person contact`" Member="Personcontacts">
+    <Type Name="Personcontact" ed:Guid="ff6197a7-b420-42b6-a9b2-5462850bdd1b">
+      <Documentation>
+        <Summary>The table for information on persons related to the store activities</Summary>
+      </Documentation>
+      <Column Name="ContactID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="True" ed:Guid="47585a35-39df-44bd-a2b7-ce4ce7de0849" />
+      <Column Name="Title" Type="System.String" DbType="VARCHAR(8) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="8" ed:ValidateMaxLength="8" ed:ValidateRequired="False" ed:Guid="6ce6fae5-2bf4-4246-8b8f-817cc011aa79" />
+      <Column Name="FirstName" Type="System.String" DbType="VARCHAR(50) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="cad29958-f003-482a-ab88-4e227ff2d037" />
+      <Column Name="MiddleName" Type="System.String" DbType="VARCHAR(50) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="0a47e56a-f917-4e1e-a953-a8de94abb337" />
+      <Column Name="LastName" Type="System.String" DbType="VARCHAR(50) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="False" ed:Guid="4aa3abfb-0a06-4fcb-8f71-14394ae6aade" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="041f59a1-4a81-435f-9a44-7e55b14233b1">
+        <Documentation>
+          <Summary>Reference to the company where the person is employed</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="HomePhone" Type="System.String" DbType="VARCHAR(25) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="25" ed:ValidateMaxLength="25" ed:ValidateRequired="False" ed:Guid="dfe97071-f78f-4e5f-a995-395e2c615ce9" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VARCHAR(25) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="25" ed:ValidateMaxLength="25" ed:ValidateRequired="False" ed:Guid="413485b8-e7ec-44db-91bb-407db5027cd6" />
+      <Column Name="AddressTitle" Type="System.String" DbType="VARCHAR(120) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="120" ed:ValidateMaxLength="120" ed:ValidateRequired="False" ed:Guid="10431296-941d-408c-879b-f945ba92e74d">
+        <Documentation>
+          <Summary>Specifies the address type which may be Home or Work</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Address" Type="System.String" DbType="VARCHAR(60) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="60" ed:ValidateMaxLength="60" ed:ValidateRequired="False" ed:Guid="14ba5d8e-fba5-4410-b877-9eaf99c6d4fe" />
+      <Column Name="City" Type="System.String" DbType="VARCHAR(30) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="30" ed:ValidateMaxLength="30" ed:ValidateRequired="False" ed:Guid="9b2795f0-edcc-4537-89e4-27e516502388" />
+      <Column Name="Region" Type="System.String" DbType="VARCHAR(20) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="8cfa79f1-66c3-457f-9b97-53b74f8bda19" />
+      <Column Name="PostalCode" Type="System.String" DbType="VARCHAR(15) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="15" ed:ValidateMaxLength="15" ed:ValidateRequired="False" ed:Guid="3cbdaabd-cd55-400d-ae0a-6568bac04b1e" />
+      <Column Name="Country" Type="System.String" DbType="VARCHAR(20) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="d6cd8ca5-7d69-49b3-921e-432a75ef1240" />
+      <Column Name="Phone" Type="System.String" DbType="VARCHAR(25) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="25" ed:ValidateMaxLength="25" ed:ValidateRequired="False" ed:Guid="bf340d4b-0679-445a-83d3-f3ee1fe7a236">
+        <Documentation>
+          <Summary>Working phone</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Fax" Type="System.String" DbType="VARCHAR(25) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="25" ed:ValidateMaxLength="25" ed:ValidateRequired="False" ed:Guid="e4d4d59d-a0e5-4c1c-a8c5-f6eb64659261">
+        <Documentation>
+          <Summary>Working fax</Summary>
+        </Documentation>
+      </Column>
+      <Association Name="Personcontact_Company" ed:AssociationGuid="9850516f-b4df-490c-a929-d62cb5e733d7" Member="Companies_PrimaryContact" ed:Guid="208fc90e-07e3-44c1-a4e3-f8290353f8ea" ThisKey="ContactID" OtherKey="PrimaryContact" Type="Company" />
+      <Association Name="Personcontact_Order" ed:AssociationGuid="d908230c-7966-432c-8aaf-f2db059fb73a" Member="Orders" ed:Guid="1290f385-5db8-4888-a0f1-d70e34dbd531" ThisKey="ContactID" OtherKey="ContactID" Type="Order" />
+      <Association Name="Company_Personcontact" ed:AssociationGuid="567c047d-5811-4ae9-9fb7-fe56f1c81012" Member="Company_CompanyID" ed:Guid="8ffedddf-beb2-4eb7-8c10-ed3300d5c2aa" ThisKey="CompanyID" OtherKey="CompanyID" Type="Company" DeleteRule="RESTRICT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="crm.`product categories`" Member="Productcategories">
+    <Type Name="Productcategory" ed:Guid="ff0af710-a0d9-41a5-a04c-0af67dfbfd79">
+      <Documentation>
+        <Summary>The tree of product categories</Summary>
+      </Documentation>
+      <Column Name="CategoryID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="True" ed:Guid="d8e1211e-971c-4296-ae02-83d82f34e718" />
+      <Column Name="CategoryName" Type="System.String" DbType="VARCHAR(20) NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="True" ed:Guid="503b1ea5-1fad-469c-b306-5bc3a1efb308" />
+      <Column Name="ParentCategory" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="896fae3e-59c4-4591-bef1-4a3ef588b50c">
+        <Documentation>
+          <Summary>A reference to the major category which includes this one</Summary>
+        </Documentation>
+      </Column>
+      <Association Name="Productcategory_Productcategory" ed:AssociationGuid="25c77ef4-8ff0-4892-96e6-28ee2e496fe2" Member="Productcategories_ParentCategory" ed:Guid="f8bca764-a886-4dc2-adc4-9e6a2edd0681" ThisKey="CategoryID" OtherKey="ParentCategory" Type="Productcategory" />
+      <Association Name="Productcategory_Productcategory" ed:AssociationGuid="25c77ef4-8ff0-4892-96e6-28ee2e496fe2" Member="Productcategory_ParentCategory" ed:Guid="39c5297e-6251-4067-938e-061aa178e36b" ThisKey="ParentCategory" OtherKey="CategoryID" Type="Productcategory" DeleteRule="RESTRICT" IsForeignKey="true" />
+      <Association Name="Productcategory_Product" ed:AssociationGuid="90fdcf5b-1bce-43ca-898d-cf40f327ead6" Member="Products" ed:Guid="499f2af7-d2e3-45cc-9939-e9891600bfc0" ThisKey="CategoryID" OtherKey="CategoryID" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="crm.products" Member="Products">
+    <Type Name="Product" ed:Guid="35e88a87-fbfe-46e7-83a0-f03e0f74a055">
+      <Documentation>
+        <Summary>Table containing data about products</Summary>
+      </Documentation>
+      <Column Name="ProductID" Type="System.Int32" DbType="INT(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="True" ed:Guid="ecbada2c-213f-4f53-b73f-6d866a0cf83c" />
+      <Column Name="ProductName" Type="System.String" DbType="VARCHAR(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" MaxLength="50" ed:ValidateMaxLength="50" ed:ValidateRequired="True" ed:Guid="6228f816-9b81-410a-9e4f-5d68f9e6c1a6" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="9777266a-9b17-4665-b0db-6dfebaffc0b3">
+        <Documentation>
+          <Summary>A category to which the product belongs</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="UnitName" Type="System.String" DbType="VARCHAR(20) NULL" CanBeNull="true" UpdateCheck="Never" MaxLength="20" ed:ValidateMaxLength="20" ed:ValidateRequired="False" ed:Guid="f15c5bea-bb9f-437a-af33-a5ddb004eca5">
+        <Documentation>
+          <Summary>Specifies whether a single product unit consists of one (Unit) or several (Parcel) items</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="UnitScale" Type="System.Int16" DbType="SMALLINT(6) NULL" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="False" ed:Guid="4f7fbc73-124c-40c6-8fca-0e1475f29830">
+        <Documentation>
+          <Summary>Specifies the number of items in a parcel</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="InStock" Type="System.Int32" DbType="INT(11) NULL" CanBeNull="true" UpdateCheck="Never" Precision="11" ed:ValidateRequired="False" ed:Guid="acf06984-99d4-4c08-8f6b-aa7d08f77d1e">
+        <Documentation>
+          <Summary>Product quantity available in the stock</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Price" Type="System.Decimal" DbType="DECIMAL(10,2) NULL" CanBeNull="true" UpdateCheck="Never" Precision="10" Scale="2" ed:ValidateRequired="False" ed:Guid="4044f2d2-a1cd-4461-ad50-c4727bc45e69">
+        <Documentation>
+          <Summary>Regular price of the product</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="DiscontinuedPrice" Type="System.Decimal" DbType="DECIMAL(10,2) NULL" CanBeNull="true" UpdateCheck="Never" Precision="10" Scale="2" ed:ValidateRequired="False" ed:Guid="48c09d2a-d405-4132-82d8-dc87cdb5a9aa">
+        <Documentation>
+          <Summary>Actual price of discontinued products</Summary>
+        </Documentation>
+      </Column>
+      <Column Name="Discontinued" Type="System.Boolean" DbType="BIT NULL" CanBeNull="true" UpdateCheck="Never" DefaultValue="b'0'" ed:ValidateRequired="False" ed:Guid="b29728fd-fc61-4533-a387-fd9833d984e7">
+        <Documentation>
+          <Summary>Specifies whether the product is being sold off</Summary>
+        </Documentation>
+      </Column>
+      <Association Name="Product_Orderdetail" ed:AssociationGuid="4c2a5f01-1e65-46d8-961f-5b6d4ca62775" Member="Orderdetails" ed:Guid="8b663fd9-4acb-4d7c-8483-24ac076eba90" ThisKey="ProductID" OtherKey="ProductID" Type="Orderdetail" />
+      <Association Name="Productcategory_Product" ed:AssociationGuid="90fdcf5b-1bce-43ca-898d-cf40f327ead6" Member="Productcategory" ed:Guid="5792c10e-2d16-46e4-9e8b-674b6050f651" ThisKey="CategoryID" OtherKey="CategoryID" Type="Productcategory" DeleteRule="RESTRICT" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

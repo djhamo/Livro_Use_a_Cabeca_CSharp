@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rebu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Rebus RebuID="2">
+    <Detalhes RebuStepID="3">
+      <Data>03/04/2015</Data>Os caras deram uma de João sem braço</Detalhes>
+    <Detalhes RebuStepID="69">
+      <Data>10/02/2015</Data>O Cara veio e arrumou.</Detalhes>
+    <Data>01/04/2015</Data>
+    <Empresa EmpresaID="1" Nome="Telefonica SA" Telefone="(11) 1234-5678" />
+    <OcorrenciaInicial>A Internet caiu</OcorrenciaInicial>
+  </Rebus>
+  <Rebus RebuID="34">
+    <Detalhes RebuStepID="66">
+      <Data>10/02/2015</Data>A Conta veio a mais.</Detalhes>
+    <Data>10/02/2015 20:40:52</Data>
+    <Empresa EmpresaID="5" Nome="Claro" Telefone="(11) 1234-5678" />
+    <OcorrenciaInicial>A Conta do Tiago Veio Errada</OcorrenciaInicial>
+  </Rebus>
+  <Rebus RebuID="43">
+    <Detalhes RebuStepID="71">
+      <Data>10/02/2015</Data>
+      <Protocolo>123456</Protocolo>O Telefone fica mudo (em uso). A Atendente falou que o Técnico viria em 24hr.</Detalhes>
+    <Data>10/02/2015 00:00:00</Data>
+    <Empresa EmpresaID="1" Nome="Telefonica SA" Telefone="(11) 1234-5678" />
+    <OcorrenciaInicial>O Telefone está mudo</OcorrenciaInicial>
+  </Rebus>
+  <Empresas EmpresaID="1" Nome="Telefonica SA" Telefone="(11) 1234-5678" />
+  <Empresas EmpresaID="5" Nome="Claro" Telefone="(11) 1234-5678" />
+  <Proprietario>Luciana Satie Oguma</Proprietario>
+  <UltimoID>82</UltimoID>
+</Rebu>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="cdcol" Class="CdCol" BaseType="DbLinq.Data.Linq.DataContext" Provider="MySql" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="cdcol.cds" Member="CdS">
+    <Type Name="CdS">
+      <Column Name="id" Member="ID" Storage="_id" Type="System.Int64" DbType="bigint(20) unsigned" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="interpret" Member="Interpret" Storage="_interpret" Type="System.String" DbType="varchar(200)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="jahr" Member="JAhR" Storage="_jaHR" Type="System.Int32" DbType="int" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="titel" Member="TItel" Storage="_tiTel" Type="System.String" DbType="varchar(200)" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

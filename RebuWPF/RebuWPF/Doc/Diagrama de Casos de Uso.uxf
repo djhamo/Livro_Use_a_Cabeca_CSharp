@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>140</x>
+      <y>20</y>
+      <w>230</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>Rebu
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>10</x>
+      <y>100</y>
+      <w>60</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Usuário</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>60</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Cadastro Chamado
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>210</x>
+      <y>120</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Cadastro Etapa 
+do Chamado
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>80</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>130</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;30.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>180</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Listagem 
+Chamados 
+Abertos
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>240</x>
+      <y>240</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Cadastro de 
+Empresas
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>150</x>
+      <y>280</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Cadastro de 
+Empresas
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>230</x>
+      <y>330</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Fechar Chamado
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>160</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;90.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>180</y>
+      <w>200</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;60.0;90.0;180.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>40</x>
+      <y>190</y>
+      <w>130</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;40.0;110.0;110.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>30</x>
+      <y>200</y>
+      <w>220</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;30.0;150.0;200.0;150.0</additional_attributes>
+  </element>
+</diagram>

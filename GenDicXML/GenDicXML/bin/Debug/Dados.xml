@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rebu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Rebus>
+    <item>
+      <key>
+        <int>1</int>
+      </key>
+      <value>
+        <RebuDetail RebuID="1">
+          <Detalhes>
+            <item>
+              <key>
+                <int>2</int>
+              </key>
+              <value>
+                <RebuStepDetail RebuStepID="2">
+                  <Data>03/04/2015</Data>Os caras deram uma de João sem braço</RebuStepDetail>
+              </value>
+            </item>
+            <item>
+              <key>
+                <int>3</int>
+              </key>
+              <value>
+                <RebuStepDetail RebuStepID="3">
+                  <Data>04/04/2015</Data>O Cara veio e arrumou</RebuStepDetail>
+              </value>
+            </item>
+          </Detalhes>
+          <Data>01/04/2015</Data>
+          <OcorrenciaInicial>A Internet caiu</OcorrenciaInicial>
+        </RebuDetail>
+      </value>
+    </item>
+  </Rebus>
+  <Proprietario>Luciana Satie Oguma</Proprietario>
+  <UltimoID>4</UltimoID>
+</Rebu>
